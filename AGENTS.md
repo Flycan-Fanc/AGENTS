@@ -10,6 +10,8 @@
 - 明确任务完成后，更新 `log.md`
 - 若项目目标、技术栈、目录结构、核心模块、已知问题或下一步任务发生变化，应同步更新 `PROJECT_CONTEXT.md`
 - 输出保持简洁，优先保留后续继续开发所需关键信息
+- 默认只读取当前任务直接相关文件，禁止无理由全项目扫描
+- 涉及大量文件读取、大范围重构、Git 提交/推送、多 Agent 切换时，必须先说明计划并等待确认
 
 ## 默认流程
 
@@ -37,20 +39,5 @@
 - 问题排查：`AGENTS/Debug_AGENT.md`
 - README 文档：`AGENTS/README_AGENT.md`
 - 发布交付：`AGENTS/Release_AGENT.md`
-
-## PROJECT_CONTEXT.md 维护规则
-
-- `PROJECT_CONTEXT.md` 用于记录项目当前状态，帮助 AI 快速理解项目
-- 新项目启动、旧项目接手、新会话恢复上下文时，应优先查看该文件
-- 当以下内容发生变化时，应更新 `PROJECT_CONTEXT.md`：
-  - 项目定位或核心目标
-  - 当前开发阶段
-  - 技术栈
-  - 目录结构
-  - 核心功能模块
-  - 关键业务规则
-  - 已知问题
-  - 下一步任务
-  - 重要开发约束
-- `PROJECT_CONTEXT.md` 只记录当前有效上下文，不堆砌详细历史
-- 详细开发过程仍记录在 `log.md`
+- Token 与上下文成本控制：`AGENTS/Token_AGENT.md`
+- 多 Agent 协调管理：`AGENTS/Coordinator_AGENT.md`
